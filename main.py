@@ -12,7 +12,7 @@ class Contact(object):
 
 
 # Function to write out the contact list
-def write_list():
+def show_list():
     t = PrettyTable(['Pos', 'Name', 'Surname', 'Number'])
     contacts.sort(reverse=False, key=name)
 
@@ -48,7 +48,7 @@ def name(club):
 
 # Implementing a somewhat of a switch statement
 def handling_input():
-    print("(a - to add, w - to write, d - to delete, q - to quit)")
+    print("(a - to add, s - to show, d - to delete, q - to quit)")
     entered = input("Please select desired action: ")
     input_dict[entered]()
 
@@ -73,7 +73,7 @@ def main():
     # Possible inputs
     input_dict = {
         'a': add_contact,
-        'w': write_list,
+        's': show_list,
         'd': remove_contact,
         'q': quit_program,
     }
